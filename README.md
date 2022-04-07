@@ -2,13 +2,12 @@
 Project Data Analytics for Psychology and Business
 
 ## Questions / to discuss:
-```ruby
+
      1. Text Text Text
      2. Text Text Text
-     end
-     ```
+     
 ## Research question: 
-What can we learn from user ratings about dating apps?
+**What can we learn from user ratings about dating apps?**
 
 - How are the different apps rated over the years?
 - Which app has more favorable responses? Have those favorable responses stayed   consistent through the years or have they increased/decreased?
@@ -31,46 +30,73 @@ The data set contains information of four different dating apps.
 
 ### Data cleansing
 
+First, we had to install a package: 
+
 <details>
-  <summary markdown="span">Codes for the cleaning</summary>
-
-  install.packages("readxl")
-library(readxl)
-Tinder <- read_excel(file.choose(), na = "NA")
-Bumble <- read_excel(file.choose(), na = "NA")
-OkCupid <- read_excel(file.choose(), na = "NA")
-Hinge <- read_excel(file.choose(), na = "NA")
-
-#Creat full data set
-Dating_Data_all <- rbind(Tinder, Bumble, OkCupid, Hinge)
-
-str(Dating_Data_all)
-
-#Rename variables
-Dating_Data_all <- Dating_Data_all %>% rename(Date_Time = at)
-colnames(Dating_Data_all)
-
-Dating_Data_all <- Dating_Data_all %>% rename(replied_Date_Time = repliedAt)
-colnames(Dating_Data_all)
-
-#Change Timestamp
-Dating_Data_all$Date <- as.Date(Dating_Data_all$Date_Time)
-Dating_Data_all$Date_Reply <- as.Date(Dating_Data_all$replied_Date_Time)
-
-#Remove Rows that have score 0 in variable "Score"
-subset(Dating_Data_all, score == 0)
-
-#Drop variables and create final data set
-Dating_App_Final <- within(Dating_Data_all, rm(Time, Date_Time, replied_Date_Time))
-
-str(Dating_App_Final)
-
-#save Datafile
-write_csv2(Dating_App_Final, file="Dating_app_cleared.csv")
-save(Dating_App_Final, file = "Dating_app_cleared.Rdata")
-
+<summary markdown="span">Package</summary>
+<!-- blank line -->    
+install.packages("readxl")<br>
+library(readxl)<br>  
 </details>
 
+Then, we hat to upload the different data sets and merche them together.
+<!-- blank line -->  
+<details>
+<summary markdown="span">Data sets</summary>
+<!-- blank line -->  
+Tinder <- read_excel(file.choose(), na = "NA")<br>
+Bumble <- read_excel(file.choose(), na = "NA")<br>
+OkCupid <- read_excel(file.choose(), na = "NA")<br>
+Hinge <- read_excel(file.choose(), na = "NA")<br>
+<!-- blank line -->
+<br>
+<!-- blank line -->
+#Create full data set<br>
+Dating_Data_all <- rbind(Tinder, Bumble, OkCupid, Hinge)<br>
+</details>
+
+After this, we explored our data set. 
+<details>
+<summary markdown="span">Explore</summary> 
+     
+str(Dating_Data_all)
+</details>
+
+Some variables had to be renamed. 
+<details>
+<summary markdown="span">Rename</summary> 
+
+Dating_Data_all <- Dating_Data_all %>% rename(Date_Time = at) <br>
+colnames(Dating_Data_all)
+<!-- blank line -->
+<br>
+<!-- blank line -->
+Dating_Data_all <- Dating_Data_all %>% rename(replied_Date_Time = repliedAt)<br>
+colnames(Dating_Data_all)
+</details>
+     
+Also, the timestamp had to be changed to a date. 
+<details>
+<summary markdown="span">Change timestamp</summary>      
+#Change Timestamp<br>
+Dating_Data_all$Date <- as.Date(Dating_Data_all$Date_Time)<br>
+Dating_Data_all$Date_Reply <- as.Date(Dating_Data_all$replied_Date_Time)
+</details>
+
+The variables we had to drop. 
+<details>
+<summary markdown="span">Remove variables</summary>       
+#Drop variables and create final data set<br>
+Dating_App_Final <- within(Dating_Data_all, rm(Time, Date_Time, replied_Date_Time))
+</details>
+
+And finally, we could save the new data file. 
+<details>
+<summary markdown="span">Save data</summary>    
+#save Datafile<br>
+write_csv2(Dating_App_Final, file="Dating_app_cleared.csv")<br>
+save(Dating_App_Final, file = "Dating_app_cleared.Rdata")
+</details>
 
 ### Data exploration 
 Here comes text
