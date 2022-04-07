@@ -10,7 +10,7 @@ Project Data Analytics for Psychology and Business
 **What can we learn from user ratings about dating apps?**
 
 - How are the different apps rated over the years?
-- Which app has more favorable responses? Have those favorable responses stayed   consistent through the years or have they increased/decreased?
+- Which app has more favorable responses? <br>Have those favorable responses stayed   consistent through the years or have they increased/decreased?
 - Do the app-ratings/comments distinguish from each other?
 - What are the common issues for those who rate the app below 3/5?
 - Are top rated reviews being found more useful to other users/potential users or the reverse?
