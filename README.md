@@ -89,7 +89,9 @@ The variables we had to drop.
 #Drop variables and create final data set<br>
 Dating_App_Final <- within(Dating_Data_all, rm(Time, Date_Time, replied_Date_Time))
 </details>
-<!-- blank line -->  
+<!-- blank line -->
+<br>
+<!-- blank line -->
 And finally, we could save the new data file. 
 <details>
 <summary markdown="span">Save data</summary>    
