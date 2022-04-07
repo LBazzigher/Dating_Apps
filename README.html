@@ -2012,7 +2012,72 @@
 <div class="d-article">
 <h1 id="dating_apps">Dating_Apps</h1>
 <p>Project Data Analytics for Psychology and Business</p>
-<p>This site was created on April, 4th 2022</p>
+<h2 id="questions-to-discuss">Questions / to discuss:</h2>
+<p><code>ruby      1. Text Text Text      2. Text Text Text      end</code> ## Research question: What can we learn from user ratings about dating apps?</p>
+<ul>
+<li>How are the different apps rated over the years?</li>
+<li>Which app has more favorable responses? Have those favorable responses stayed consistent through the years or have they increased/decreased?</li>
+<li>Do the app-ratings/comments distinguish from each other?</li>
+<li>What are the common issues for those who rate the app below 3/5?</li>
+<li>Are top rated reviews being found more useful to other users/potential users or the reverse?</li>
+</ul>
+<h2 id="relevance">Relevance</h2>
+<p>The goal of this project is to analyze how the user view has developed over the years.Therefore an analysis of the rating, the user comments and the Number of Thumbs up received by a person will be made. We hope that this project will help app developers or investors who want to improve their dating app or pick out the next big dating app.</p>
+<h2 id="data">Data</h2>
+<p>The data set contains information of four different dating apps.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">App</th>
+<th style="text-align: center;">cases</th>
+<th style="text-align: center;">timescale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Tinder</td>
+<td style="text-align: center;">&gt;500’000</td>
+<td style="text-align: center;">2013 - 2022</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Bumble</td>
+<td style="text-align: center;">&gt;104’000</td>
+<td style="text-align: center;">2015 - 2022</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">OkCupid</td>
+<td style="text-align: center;">&gt;127’000</td>
+<td style="text-align: center;">2010 - 2022</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Hinge</td>
+<td style="text-align: center;">&gt;53’000</td>
+<td style="text-align: center;">2017 - 2022</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-cleansing">Data cleansing</h3>
+<details>
+<summary>
+Codes for the cleaning
+</summary>
+<p>install.packages(“readxl”) library(readxl) Tinder &lt;- read_excel(file.choose(), na = “NA”) Bumble &lt;- read_excel(file.choose(), na = “NA”) OkCupid &lt;- read_excel(file.choose(), na = “NA”) Hinge &lt;- read_excel(file.choose(), na = “NA”)</p>
+<p>#Creat full data set Dating_Data_all &lt;- rbind(Tinder, Bumble, OkCupid, Hinge)</p>
+<p>str(Dating_Data_all)</p>
+<p>#Rename variables Dating_Data_all &lt;- Dating_Data_all %&gt;% rename(Date_Time = at) colnames(Dating_Data_all)</p>
+<p>Dating_Data_all &lt;- Dating_Data_all %&gt;% rename(replied_Date_Time = repliedAt) colnames(Dating_Data_all)</p>
+<p>#Change Timestamp Dating_Data_all<span class="math inline">\(Date &lt;- as.Date(Dating_Data_all\)</span>Date_Time) Dating_Data_all<span class="math inline">\(Date_Reply &lt;- as.Date(Dating_Data_all\)</span>replied_Date_Time)</p>
+<p>#Remove Rows that have score 0 in variable “Score” subset(Dating_Data_all, score == 0)</p>
+<p>#Drop variables and create final data set Dating_App_Final &lt;- within(Dating_Data_all, rm(Time, Date_Time, replied_Date_Time))</p>
+<p>str(Dating_App_Final)</p>
+<p>#save Datafile write_csv2(Dating_App_Final, file=“Dating_app_cleared.csv”) save(Dating_App_Final, file = “Dating_app_cleared.Rdata”)</p>
+</details>
+<h3 id="data-exploration">Data exploration</h3>
+<p>Here comes text</p>
+<h3 id="data-analysis">Data analysis</h3>
+<p>Here Comes textr</p>
+<h2 id="about-the-authors">About the authors:</h2>
+<p>Lina, Arbnor &amp; Laura</p>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2020,6 +2085,15 @@
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->

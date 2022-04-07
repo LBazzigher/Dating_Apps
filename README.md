@@ -30,7 +30,47 @@ The data set contains information of four different dating apps.
 | Hinge | >53'000 | 2017 - 2022 |
 
 ### Data cleansing
-Here comes text
+
+<details>
+  <summary markdown="span">Codes for the cleaning</summary>
+
+  install.packages("readxl")
+library(readxl)
+Tinder <- read_excel(file.choose(), na = "NA")
+Bumble <- read_excel(file.choose(), na = "NA")
+OkCupid <- read_excel(file.choose(), na = "NA")
+Hinge <- read_excel(file.choose(), na = "NA")
+
+#Creat full data set
+Dating_Data_all <- rbind(Tinder, Bumble, OkCupid, Hinge)
+
+str(Dating_Data_all)
+
+#Rename variables
+Dating_Data_all <- Dating_Data_all %>% rename(Date_Time = at)
+colnames(Dating_Data_all)
+
+Dating_Data_all <- Dating_Data_all %>% rename(replied_Date_Time = repliedAt)
+colnames(Dating_Data_all)
+
+#Change Timestamp
+Dating_Data_all$Date <- as.Date(Dating_Data_all$Date_Time)
+Dating_Data_all$Date_Reply <- as.Date(Dating_Data_all$replied_Date_Time)
+
+#Remove Rows that have score 0 in variable "Score"
+subset(Dating_Data_all, score == 0)
+
+#Drop variables and create final data set
+Dating_App_Final <- within(Dating_Data_all, rm(Time, Date_Time, replied_Date_Time))
+
+str(Dating_App_Final)
+
+#save Datafile
+write_csv2(Dating_App_Final, file="Dating_app_cleared.csv")
+save(Dating_App_Final, file = "Dating_app_cleared.Rdata")
+
+</details>
+
 
 ### Data exploration 
 Here comes text
