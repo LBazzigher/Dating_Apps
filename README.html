@@ -2013,16 +2013,57 @@
 <h1 id="dating_apps">Dating_Apps</h1>
 <p>Project Data Analytics for Psychology and Business</p>
 <h2 id="questions-to-discuss">Questions / to discuss:</h2>
-<p><code>ruby      1. Text Text Text      2. Text Text Text      end</code> ## Research question: What can we learn from user ratings about dating apps?</p>
+<ol type="1">
+<li>Text Text Text</li>
+<li>Text Text Text</li>
+</ol>
+<h2 id="research-question">Research question:</h2>
+<p><strong>What can we learn from user ratings about dating apps?</strong></p>
 <ul>
 <li>How are the different apps rated over the years?</li>
-<li>Which app has more favorable responses? Have those favorable responses stayed consistent through the years or have they increased/decreased?</li>
+<li>Which app has more favorable responses? <br>Have those favorable responses stayed consistent through the years or have they increased/decreased?</li>
 <li>Do the app-ratings/comments distinguish from each other?</li>
 <li>What are the common issues for those who rate the app below 3/5?</li>
 <li>Are top rated reviews being found more useful to other users/potential users or the reverse?</li>
 </ul>
 <h2 id="relevance">Relevance</h2>
-<p>The goal of this project is to analyze how the user view has developed over the years.Therefore an analysis of the rating, the user comments and the Number of Thumbs up received by a person will be made. We hope that this project will help app developers or investors who want to improve their dating app or pick out the next big dating app.</p>
+<p>Dating apps have become more and more important for singles all over the world. In comparison to the services which had come before, Tinder made dating simple, but it also, as studies have found, made it less about lasting connections and relationships and more about casual hook-ups and cheesy openers. <!-- blank line --> <br> <!-- blank line --> By 2021 dating app revenues have increased every year since 2015, reaching $5.61 billion with over 323 million people worldwide using dating apps. This project picked four different dating apps to analyze which are somehow different in style and usage. <!-- blank line --> <br> <!-- blank line --></p>
+<details>
+<summary>
+Tinder
+</summary>
+<!-- blank line -->
+Tinder fundamentally changed online dating by removing the seriousness and giving users more control.
+</details>
+<!-- blank line -->
+<p><br> <!-- blank line --></p>
+<details>
+<summary>
+Bumble
+</summary>
+<!-- blank line -->
+Bumble is designed to give women control of the experience. Bumble was started by Tinder co-founder Whitney Wolfe Herd, who left after tensions at the company. Bumble is consideret the main rival in North Armerica.
+</details>
+<!-- blank line -->
+<p><br> <!-- blank line --></p>
+<details>
+<summary>
+OkCupid
+</summary>
+<!-- blank line -->
+OkCupid features multiple-choice questions to match members. It is one of the older dating apps and is a U.S.-based, internationally operating online dating, friendship, and formerly also a social networking website and application.
+</details>
+<!-- blank line -->
+<p><br> <!-- blank line --> <!-- blank line --></p>
+<details>
+<summary>
+Hinge
+</summary>
+<!-- blank line -->
+Hinge may have been destined to be one of the many dating app failures, but the team reformed the app for long-term relationships and has hit the ground running in North America.
+</details>
+<!-- blank line -->
+<p><br> <!-- blank line --> The goal of this project is to analyze how the user view has developed over the years.Therefore an analysis of the rating, the user comments and the Number of Thumbs up received by a person will be made. We hope that this project will help app developers or investors who want to improve their dating app or pick out the next big dating app.</p>
 <h2 id="data">Data</h2>
 <p>The data set contains information of four different dating apps.</p>
 <table>
@@ -2057,21 +2098,68 @@
 </tbody>
 </table>
 <h3 id="data-cleansing">Data cleansing</h3>
+First, we had to install a package: <!-- blank line --><br />
+
 <details>
 <summary>
-Codes for the cleaning
+Package
 </summary>
-<p>install.packages(“readxl”) library(readxl) Tinder &lt;- read_excel(file.choose(), na = “NA”) Bumble &lt;- read_excel(file.choose(), na = “NA”) OkCupid &lt;- read_excel(file.choose(), na = “NA”) Hinge &lt;- read_excel(file.choose(), na = “NA”)</p>
-<p>#Creat full data set Dating_Data_all &lt;- rbind(Tinder, Bumble, OkCupid, Hinge)</p>
-<p>str(Dating_Data_all)</p>
-<p>#Rename variables Dating_Data_all &lt;- Dating_Data_all %&gt;% rename(Date_Time = at) colnames(Dating_Data_all)</p>
-<p>Dating_Data_all &lt;- Dating_Data_all %&gt;% rename(replied_Date_Time = repliedAt) colnames(Dating_Data_all)</p>
-<p>#Change Timestamp Dating_Data_all<span class="math inline">\(Date &lt;- as.Date(Dating_Data_all\)</span>Date_Time) Dating_Data_all<span class="math inline">\(Date_Reply &lt;- as.Date(Dating_Data_all\)</span>replied_Date_Time)</p>
-<p>#Remove Rows that have score 0 in variable “Score” subset(Dating_Data_all, score == 0)</p>
-<p>#Drop variables and create final data set Dating_App_Final &lt;- within(Dating_Data_all, rm(Time, Date_Time, replied_Date_Time))</p>
-<p>str(Dating_App_Final)</p>
-<p>#save Datafile write_csv2(Dating_App_Final, file=“Dating_app_cleared.csv”) save(Dating_App_Final, file = “Dating_app_cleared.Rdata”)</p>
+<!-- blank line -->
+install.packages(“readxl”)<br> library(readxl)<br>
 </details>
+<!-- blank line -->
+Then, we hat to upload the different data sets and merche them together. <!-- blank line --><br />
+
+<details>
+<summary>
+Data sets
+</summary>
+<!-- blank line -->
+Tinder &lt;- read_excel(file.choose(), na = “NA”)<br> Bumble &lt;- read_excel(file.choose(), na = “NA”)<br> OkCupid &lt;- read_excel(file.choose(), na = “NA”)<br> Hinge &lt;- read_excel(file.choose(), na = “NA”)<br> <!-- blank line --> <br> <!-- blank line --> #Create full data set<br> Dating_Data_all &lt;- rbind(Tinder, Bumble, OkCupid, Hinge)<br>
+</details>
+<!-- blank line -->
+After this, we explored our data set.
+<details>
+<summary>
+Explore
+</summary>
+<!-- blank line -->
+str(Dating_Data_all)
+</details>
+<!-- blank line -->
+Some variables had to be renamed.
+<details>
+<summary>
+Rename
+</summary>
+<!-- blank line -->
+Dating_Data_all &lt;- Dating_Data_all %&gt;% rename(Date_Time = at) <br> colnames(Dating_Data_all) <!-- blank line --> <br> <!-- blank line --> Dating_Data_all &lt;- Dating_Data_all %&gt;% rename(replied_Date_Time = repliedAt)<br> colnames(Dating_Data_all)
+</details>
+<!-- blank line -->
+Also, the timestamp had to be changed to a date.
+<details>
+<summary>
+Change timestamp
+</summary>
+#Change Timestamp<br> Dating_Data_all<span class="math inline">\(Date &lt;- as.Date(Dating_Data_all\)</span>Date_Time)<br> Dating_Data_all<span class="math inline">\(Date_Reply &lt;- as.Date(Dating_Data_all\)</span>replied_Date_Time)
+</details>
+<!-- blank line -->
+The variables we had to drop.
+<details>
+<summary>
+Remove variables
+</summary>
+#Drop variables and create final data set<br> Dating_App_Final &lt;- within(Dating_Data_all, rm(Time, Date_Time, replied_Date_Time))
+</details>
+<!-- blank line -->
+<br> <!-- blank line --> And finally, we could save the new data file.
+<details>
+<summary>
+Save data
+</summary>
+#save Datafile<br> write_csv2(Dating_App_Final, file=“Dating_app_cleared.csv”)<br> save(Dating_App_Final, file = “Dating_app_cleared.Rdata”)
+</details>
+<!-- blank line -->
 <h3 id="data-exploration">Data exploration</h3>
 <p>Here comes text</p>
 <h3 id="data-analysis">Data analysis</h3>

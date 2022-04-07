@@ -3,7 +3,7 @@ Project Data Analytics for Psychology and Business
 
 ## Questions / to discuss:
 
-  1. Text Text Text
+  1. How specific has the research question to be? 
   2. Text Text Text
      
 ## Research question: 
@@ -16,6 +16,51 @@ Project Data Analytics for Psychology and Business
 - Are top rated reviews being found more useful to other users/potential users or the reverse?
 
 ## Relevance
+Dating apps have become more and more important for singles all over the world. In comparison to the services which had come before, Tinder made dating simple, but it also, as studies have found, made it less about lasting connections and relationships and more about casual hook-ups and cheesy openers. 
+<!-- blank line -->
+<br>
+<!-- blank line -->
+By 2021 dating app revenues have increased every year since 2015, reaching $5.61 billion with over 323 million people worldwide using dating apps. This project picked four different dating apps to analyze which are somehow different in style and usage. 
+<!-- blank line -->
+<br>
+<!-- blank line -->
+
+<details>
+<summary markdown="span">Tinder</summary>
+<!-- blank line -->    
+Tinder fundamentally changed online dating by removing the seriousness and giving users more control. 
+</details>
+<!-- blank line -->  
+<br>
+<!-- blank line -->
+
+<details>
+<summary markdown="span">Bumble</summary>
+<!-- blank line -->    
+Bumble is designed to give women control of the experience. Bumble was started by Tinder co-founder Whitney Wolfe Herd, who left after tensions at the company. Bumble is consideret the main rival in North Armerica.
+</details>
+<!-- blank line -->  
+<br>
+<!-- blank line -->
+
+<details>
+<summary markdown="span">OkCupid</summary>
+<!-- blank line -->    
+OkCupid features multiple-choice questions to match members. It is one of the older dating apps and is a U.S.-based, internationally operating online dating, friendship, and formerly also a social networking website and application. 
+</details>
+<!-- blank line -->  
+<br>
+<!-- blank line -->
+<!-- blank line -->
+
+<details>
+<summary markdown="span">Hinge</summary>
+<!-- blank line -->    
+Hinge may have been destined to be one of the many dating app failures, but the team reformed the app for long-term relationships and has hit the ground running in North America.
+</details>
+<!-- blank line -->  
+<br>
+<!-- blank line -->
 The goal of this project is to analyze how the user view has developed over the years.Therefore an analysis of the rating, the user comments and the Number of Thumbs up received by a person will be made. We hope that this project will help app developers or investors who want to improve their dating app or pick out the next big dating app.
 
 ## Data
