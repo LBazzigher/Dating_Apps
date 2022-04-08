@@ -30,9 +30,7 @@ By 2021 dating app revenues have increased every year since 2015, reaching $5.61
 <!-- blank line -->    
 Tinder fundamentally changed online dating by removing the seriousness and giving users more control. 
 </details>
-<!-- blank line -->  
-<br>
-<!-- blank line -->
+<!-- blank line --> 
 
 <details>
 <summary markdown="span">Bumble</summary>
@@ -40,17 +38,12 @@ Tinder fundamentally changed online dating by removing the seriousness and givin
 Bumble is designed to give women control of the experience. Bumble was started by Tinder co-founder Whitney Wolfe Herd, who left after tensions at the company. Bumble is consideret the main rival in North Armerica.
 </details>
 <!-- blank line -->  
-<br>
-<!-- blank line -->
 
 <details>
 <summary markdown="span">OkCupid</summary>
 <!-- blank line -->    
 OkCupid features multiple-choice questions to match members. It is one of the older dating apps and is a U.S.-based, internationally operating online dating, friendship, and formerly also a social networking website and application. 
 </details>
-<!-- blank line -->  
-<br>
-<!-- blank line -->
 <!-- blank line -->
 
 <details>
